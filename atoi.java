@@ -3,7 +3,7 @@ public class Solution {
         // Start typing your Java solution below
         // DO NOT write main() function
         char[] mychar= str.toCharArray();
-        //ksk
+        
         boolean space=true;
         boolean fuhao=true;
         boolean pos=true;
