@@ -1,0 +1,27 @@
+public class Solution {
+    public ArrayList<ArrayList<Integer>> subsets(int[] S) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        ArrayList<ArrayList<Integer>> result= new ArrayList<ArrayList<Integer>>();
+        ArrayList<Integer> temp=new ArrayList<Integer>();
+        
+        result.add(temp);
+        Arrays.sort(S);
+        
+        dfs(result, temp, S, 0);
+        
+        return result;
+    }
+    
+    public void dfs(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> temp, int[] S, int pos)
+    {
+        for(int i= pos; i< S.length; i++)
+        {
+            temp.add(S[i]);
+            result.add(new ArrayList<Integer>(temp));
+            dfs(result, temp, S, i+1);
+            temp.remove(temp.size()-1);
+        }
+        return;
+    }
+}

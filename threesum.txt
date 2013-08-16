@@ -1,0 +1,48 @@
+public class Solution {
+    public ArrayList<ArrayList<Integer>> threeSum(int[] num) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        int length=num.length;   
+        ArrayList<ArrayList<Integer>> result=new ArrayList<ArrayList<Integer>>();
+        
+        if(num==null || num.length<3)
+        {
+            return result;
+        }
+        Arrays.sort(num);
+        //num.sort();
+        
+        for(int i=0; i< length;i++)
+        {
+            if(num[i]>0)
+            {break;}
+            int j=i+1;
+            int k=length-1;
+            
+            while(j<k)
+            {
+            if(num[i]+num[j]+num[k]==0)
+            {
+                ArrayList<Integer> tem=new ArrayList<Integer>();
+                tem.add(num[i]);
+                tem.add(num[j]);
+                tem.add(num[k]);
+                
+                if (!result.contains(tem))
+                {
+                    result.add(tem);
+                }
+                j++;
+                k--;
+            }else
+            if(num[i]+num[j]+num[k]>0)
+            {
+                k--;
+            }
+            else{j++;}}
+        }
+        
+        return result;
+        
+    }
+}

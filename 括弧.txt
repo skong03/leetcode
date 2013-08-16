@@ -1,0 +1,35 @@
+public class Solution {
+    public boolean isValid(String s) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        char[] mychar=s.toCharArray();
+        
+        Stack<Character> mystack= new Stack<Character>();
+        
+        for(int i=0; i< s.length(); i++)
+        {
+            if(mychar[i]=='('||mychar[i]=='['||mychar[i]=='{')
+            {
+                mystack.push(mychar[i]);
+                continue;
+            }
+            
+            if(mychar[i]==')' && !mystack.isEmpty() && mystack.peek()=='(')
+            {
+                mystack.pop();
+            }else if(mychar[i]==']' && !mystack.isEmpty() && mystack.peek()=='[')
+            {
+                mystack.pop();
+            }else if(mychar[i]=='}' && !mystack.isEmpty() && mystack.peek()=='{')
+            {
+                mystack.pop();
+            }else
+            {return false;}
+        }
+        
+        if(mystack.isEmpty())
+        {
+            return true;
+        }else{return false;}
+    }
+}

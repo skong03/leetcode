@@ -1,0 +1,56 @@
+public class Solution {  
+    public ArrayList<String> generateParenthesis(int n) {  
+        // Start typing your Java solution below  
+        // DO NOT write main() function  
+        ArrayList<String> res = new ArrayList<String>();  
+        //char[] mychar= new char[n*2];
+        
+        String s="";
+        dfs(res, s, n,n);
+        return res;
+    }  
+      
+    public void dfs(ArrayList<String> res, String s, int left, int right)
+    {
+        if(left<0 || left>right)
+        {return;}
+        if(left==0 && right ==0)
+        {
+            res.add(new String(s));
+        }
+        String a;
+        String b;
+        a=s+"(";
+        dfs(res, a, left-1, right);
+        b=s+")";
+        dfs(res, b, left, right-1);
+    }
+}
+
+
+
+public class Solution {
+    public ArrayList<ArrayList<Integer>> subsets(int[] S) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        ArrayList<ArrayList<Integer>> re=new ArrayList<ArrayList<Integer>>();
+        ArrayList<Integer> temp=new ArrayList<Integer>();
+        
+        Arrays.sort(S);
+        re.add(temp);
+        dfs(re,temp,S,0);
+        return re;
+    }
+    
+    public void dfs(ArrayList<ArrayList<Integer>> re,ArrayList<Integer> temp, int[] S, int pos)
+    {
+        for(int i=pos; i< S.length;i++)
+        {
+            temp.add(S[i]);
+            re.add(new ArrayList<Integer>(temp));
+            dfs(re,temp,S,i+1);
+            temp.remove(temp.size()-1);
+        }
+    }
+}
+
