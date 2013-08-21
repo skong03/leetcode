@@ -22,7 +22,7 @@ public class Solution {
                 fuhao=false;
                 space=false;
                 pos=true;
-                continue;
+                //continue;
             }
             
             if(mychar[i]=='-' && fuhao)
@@ -30,7 +30,7 @@ public class Solution {
                 fuhao=false;
                 pos=false;
                 space=false;
-                continue;
+                //continue;
             }
             
             if(mychar[i]>='0' && mychar[i]<='9')
@@ -38,7 +38,7 @@ public class Solution {
                 space=false;
                 fuhao=false;
                 sum=sum*10+(mychar[i]-'0');
-                continue;
+                //continue;
             }
             
             else

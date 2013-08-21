@@ -1,0 +1,19 @@
+public class Solution {
+    public boolean isValidBST(TreeNode root) {
+        Integer i=Integer.MIN_VALUE;
+        Integer j=Integer.MAX_VALUE;
+        return isvalid(root,i,j);
+    }
+
+    public boolean isvalid(TreeNode n, Integer i, Integer j)
+    {
+        if(n==null)
+            return true;
+        else if(n.left!=null && (n.left.val<=i || n.left.val>=n.val))
+            return false;
+        else if(n.right!=null&& (n.right.val>=j || n.right.val<=n.val))
+            return false;
+        else
+            return isvalid(n.left,i,n.val) && isvalid(n.right,n.val,j);
+    }
+}
