@@ -25,7 +25,7 @@ public class Solution {
             swap(num, pos, i);
             temp.add(num[pos]);
             dfs(result, temp, pos+1, num);
-            temp.remove(temp.size()-1);  //ºÜ¹Ø¼ü£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡
+            temp.remove(temp.size()-1); 
             swap(num, pos, i);
         }
     }

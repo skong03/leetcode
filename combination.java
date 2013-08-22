@@ -20,7 +20,7 @@ public class Solution {
                 ary.add(i);
             }
             res.add(ary);
-        }else if(index<=n)
+        }else if(index<=n)//if index>n, still wrong, find(res,s,n,n,k) means choose none before.
         {
             s.push(index);
             find(res, s, index+1, n, k-1);
