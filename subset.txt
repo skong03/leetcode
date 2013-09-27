@@ -25,3 +25,15 @@ public class Solution {
         return;
     }
 }
+
+
+public void dfs(ArrayList<ArrayList<Integer>> res, ArrayList<Integer> temp, int index, int[] S)
+    {
+        res.add(new ArrayList<Integer>(temp));
+        for(int i=index;i<S.length;i++)
+        {
+            temp.add(S[i]);
+            dfs(res,temp,i+1,S);
+            temp.remove(temp.size()-1);
+        }
+}
