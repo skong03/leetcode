@@ -25,3 +25,25 @@ public class Solution {
         return true;
     }
 }
+
+public class Solution {
+    public boolean isPalindrome(int x) {
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        if(x<0)
+            return false;
+        if(x>=0&&x<=9)
+            return true;
+        int div=1;
+        
+        while(x/div>=10){
+            div*=10;
+        }
+        
+        int l=x/div;
+        int r=x%10;
+        if(l==r){
+            return isPalindrome(x%div/10);
+        }else
+            return false;
+    }
+}
