@@ -16,7 +16,7 @@ public class Solution {
 
         if(A[mid]>=A[left])
         {
-            if(target>=A[left]&&target<=A[mid])
+            if(target>=A[left]&&target<=A[mid])//must write the first condition
                 return dfs(A,left,mid-1,target);
             else 
                 return dfs(A,mid+1,right,target);

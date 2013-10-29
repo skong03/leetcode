@@ -34,3 +34,31 @@ public class Solution {
         }
     }
 }
+
+
+
+public class Solution {
+    public ArrayList<ArrayList<Integer>> permuteUnique(int[] num) {
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        ArrayList<ArrayList<Integer>> res =new ArrayList<ArrayList<Integer>>();
+        ArrayList<Integer> temp=new ArrayList<Integer>();
+        Arrays.sort(num);
+        dfs(res, temp, num,0);
+        return res;
+    }
+    
+    public void dfs(ArrayList<ArrayList<Integer>> res, ArrayList<Integer> temp, int[] num, int pos){
+        if(pos==num.length){
+            res.add(new ArrayList<Integer>(temp));
+            return;
+        }
+        
+        for(int i=pos;i<num.length;i++){
+            temp.add(num[i]);
+            dfs(res,temp,num,i+1);
+            temp.remove(temp.size()-1);
+            while(i<num.length&&num[i]==num[i+1])
+                i++;
+        }
+    }
+}
