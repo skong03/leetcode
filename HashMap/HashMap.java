@@ -1,9 +1,9 @@
 package HashMap;
 
 import java.util.LinkedList;
-/*这题的几个注意点：
+/*be care of this points
  * 1.need to remember the data structure we use
- * 2.Cell的几个property 是 private，要用 set get function
+ * 2.Cell's property is private，need to use set get function
  * 3.If the key is same, need to replace the old one
  * (optional)4. hashcode() and equals() function 
  * 	*/
@@ -22,7 +22,7 @@ public class HashMap<K,V> {
 			items[index].add(new Cell<K,V>(key,val));
 		}else{
 			LinkedList<Cell<K,V>> temp=items[index];
-			for(Cell<K,V> c:temp){//删除相同key的cell
+			for(Cell<K,V> c:temp){//delete same key
 				if(c.equal(key)){
 					temp.remove(c);
 					break;
