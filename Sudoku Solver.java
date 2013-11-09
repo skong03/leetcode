@@ -41,3 +41,20 @@ public class Solution {
         return true;
     }
 }
+
+
+
+
+/*this method is wrong, can't fix it, I don't know why???????*, remember the above one
+public void help(char[][] board, ArrayList<Integer> pos, int i){
+ 
+        if(i==pos.size()){
+            return;}
+        int p=pos.get(i);
+        
+        for(char c='1';c<='9';c++){
+            board[p/9][p%9]=c;//fit the num in 
+            if(check(board, p/9,p%9,))//check if valid
+                help(board,pos,i+1);//go to next number....
+        }
+    }

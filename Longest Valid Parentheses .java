@@ -13,8 +13,9 @@ public class Solution {
                     dp[i]=dp[i+1]+2;//if valid, dp[i+1]+2
                     if(j+1<n)//maybe j+1 is also valid, then you need to plus that
                         dp[i]+=dp[j+1];
+	            max=Math.max(max,dp[i]);
                 }
-                max=Math.max(max,dp[i]);
+                
             }
         }
         

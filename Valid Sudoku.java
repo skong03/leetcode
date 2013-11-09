@@ -76,34 +76,31 @@ public class Solution {
     }
 }
 
+
 public class Solution {
     public boolean isValidSudoku(char[][] board) {
         // Note: The Solution object is instantiated only once and is reused by each test case.
         for(int i=0;i<9;i++){
             for(int j=0;j<9;j++){
-                if(board[i][j]!='.'){
-                    char temp=board[i][j];
-                    board[i][j]=',';
-                    if(!check(board,i,j,temp)){
-                        return false;
-                    }
-                    board[i][j]=temp;
-                }
+                if(board[i][j]!='.'&&!check(board, i,j))
+                    return false;
             }
         }
         return true;
     }
     
-    public boolean check(char[][] board, int i, int j,char temp){
-        for(int x=0;x<9;x++){
-            int row=3*(i/3)+x/3;
-            int colum=3*(j/3)+x%3;
-            
-            if(board[i][x]==temp||board[x][j]==temp)
+    public boolean check(char[][] board, int i, int j){
+        char temp=board[i][j];
+        board[i][j]='.';
+        for(int k=0;k<9;k++){
+            if(board[i][k]==temp||board[k][j]==temp)
                 return false;
-            if(board[row][colum]==temp)
+            int x=(i/3)*3+k/3;
+            int y=(j/3)*3+k%3;//one %3, another /3, no matter who did this
+            if(board[x][y]==temp)
                 return false;
         }
+        board[i][j]=temp;
         return true;
     }
 }

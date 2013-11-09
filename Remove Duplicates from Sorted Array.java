@@ -1,26 +1,3 @@
-public class Solution {
-    public int removeDuplicates(int[] A) {
-		// Start typing your Java solution below
-		// DO NOT write main() function
-		if (A.length == 0)
-			return 0;
-
-		int p1 = 0;
-		int p2 = 0;
-
-		while (p1 < A.length - 1) {
-			if (A[p1] == A[p1 + 1])
-				p1++;
-			else {
-				A[p2+1] = A[p1+1];//easy to make mistake
-				p2++;
-				p1++;
-			}
-		}
-
-		return p2+1;
-	}
-}
 
 //this method is much easy understand, use this one
 public class Solution {  
@@ -37,3 +14,20 @@ public class Solution {
         return index+1;  
     }  
 } 
+
+
+public class Solution {
+    public int removeDuplicates(int[] A) {
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        if(A.length==0)
+            return 0;
+        int slow=0;
+        for(int fast=0;fast<A.length;fast++){
+            if(A[slow]!=A[fast]){
+                slow++;
+                A[slow]=A[fast];
+            }
+        }
+        return slow+1;
+    }
+}

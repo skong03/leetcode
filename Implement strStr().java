@@ -23,3 +23,36 @@ public class Solution {
         return null;
     }
 }
+
+public class Solution {
+    public String strStr(String haystack, String needle) {
+       if(needle.length()==0)
+       return haystack;
+       if(haystack.length()<needle.length())
+        return null;
+        
+        int diff= haystack.length()-needle.length()+1;
+        
+        for(int i=0; i< diff; i++)
+        {
+            if(haystack.substring(i).startsWith(needle))
+            {
+                return haystack.substring(i);
+            }
+        }
+        return null;
+    }
+}
+
+public class Solution {
+    public String strStr(String haystack, String needle) {
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        int nlength=needle.length();
+        for(int i=0;i<=haystack.length()-needle.length();i++){
+            if(haystack.substring(i,i+nlength).equals(needle))
+                return haystack.substring(i);
+        }
+        return null;
+    }
+}
+

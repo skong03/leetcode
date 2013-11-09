@@ -5,7 +5,7 @@ public class Solution {
         int i=0;
         while(i<A.length)
         {
-            if(A[i]!=i+1&&A[i]-1>=0&&A[i]<A.length&&A[A[i]-1]!=A[i])//这个数要求换的位置合法，这是数错位了，（要求位置上的数不能一样，不然会死循环）
+            if(A[i]!=i+1&&A[i]-1>=0&&A[i]<A.length&&A[A[i]-1]!=A[i])
             {
                 swap(A,i,A[i]-1);
             }

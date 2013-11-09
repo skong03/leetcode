@@ -10,7 +10,7 @@ public class Solution {
     
     public void dfs(ArrayList<String> res, String s, int left, int right)
     {
-        if(left>right || left<0)
+        if(left>right || left<0)//left <0 forget
             return;
         
         if(left==0 && right==0)

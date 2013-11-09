@@ -11,10 +11,10 @@ public class Solution {
         if(A[mid]==target)
             return mid;
             
-        if(left > right)//don't find answer
+        if(left > right)//don't find answer don't need '='
             return -1;
 
-        if(A[mid]>=A[left])
+        if(A[mid]>=A[left])//all need '=' remember this, easy to make mistake
         {
             if(target>=A[left]&&target<=A[mid])//must write the first condition
                 return dfs(A,left,mid-1,target);

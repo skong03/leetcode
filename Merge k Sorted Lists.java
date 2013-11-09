@@ -9,7 +9,7 @@
  *     }
  * }
  */
-//绝对不能往heap里加null
+//don't add null into heap
 public class Solution {
     public ListNode mergeKLists(ArrayList<ListNode> lists) {
         // Start typing your Java solution below

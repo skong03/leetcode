@@ -31,3 +31,40 @@ public class Solution {
         return end;
     }
 }
+
+
+public class Solution {
+    public void flatten(TreeNode root) {
+		flatten1(root);
+	}
+
+	public TreeNode flatten1(TreeNode root){
+		if(root==null||(root.left==null&&root.right==null))
+			return root;
+		TreeNode left,right, end;
+		if(root.left!=null){
+			left=root.left;
+			right=root.right;
+			root.left==null;
+			root.right=left;
+			end=fallten(left);
+			if(right!=null){
+				end.right=right;
+				flateen1(right);
+			}
+			
+		}
+		else{
+			end=flatten1(root.right);
+		}		
+	}
+	return end;
+
+}
+
+
+
+
+
+
+
