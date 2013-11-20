@@ -1,3 +1,23 @@
+public class Solution {
+    public int minDepth(TreeNode root) {
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        if(root==null)
+            return 0;
+        if(root.left==null&&root.right==null)
+            return 1;
+        int left=Integer.MAX_VALUE;
+        int right=Integer.MAX_VALUE;
+        
+        if(root.left!=null)
+            left=minDepth(root.left);
+        if(root.right!=null)
+            right=minDepth(root.right);
+        
+        return Math.min(left,right)+1;
+    }
+}
+
+
 /**
  * Definition for binary tree
  * public class TreeNode {

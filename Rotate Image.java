@@ -1,4 +1,4 @@
-public class Solution {//draw 6*6 matrix, rotate the second layer, 
+public class Solution {//draw 6*6 matrix, rotate the second layer, there is no index with i and j same time
     public void rotate(int[][] matrix) {
         // Start typing your Java solution below
         // DO NOT write main() function

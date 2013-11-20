@@ -6,7 +6,7 @@ public class Solution {
         int p1=0;
         int p2=A.length-1;
         
-        while(p1<=p2)
+        while(p1<=p2)//test case [1,0], be care of the equal
         {
             if(A[p1]==0)
             {

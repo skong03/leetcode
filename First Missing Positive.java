@@ -6,7 +6,8 @@ public class Solution {
         while(i<A.length)
         {
             if(A[i]!=i+1&&A[i]-1>=0&&A[i]<A.length&&A[A[i]-1]!=A[i])
-            {
+            {//when A[i]!=i+1 && A[i] is in the range of A, and the item need to change is not same
+		//the test case [1,1]
                 swap(A,i,A[i]-1);
             }
             else
@@ -14,7 +15,7 @@ public class Solution {
                 i++;
             }
         }
-        
+        //find first elem which is not equal its index
         for(int j=0;j<A.length;j++)
         {
             if(j+1!=A[j])
@@ -30,3 +31,5 @@ public class Solution {
         A[b]=temp;
     }
 }
+
+

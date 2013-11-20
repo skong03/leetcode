@@ -6,6 +6,8 @@ public class Solution {
             return A.length;
         int left=1;
         int count=1;
+//both left and right from 1, if right == right-1, count++
+//only the first number and the first two number need to be put into left, others, just go right
         for(int right=1;right<A.length;right++)
         {
             if(A[right]==A[right-1])

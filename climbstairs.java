@@ -25,7 +25,22 @@ public class solution {
         }
     }
 }
-
+public class Solution {
+    public int climbStairs(int n) {
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        if(n==0)
+            return 0;
+        if(n==1)
+            return 1;
+        int[] board=new int[n+1];//n+1
+        board[0]=1;
+        board[1]=1;
+        for(int i=2;i<=n;i++){
+            board[i]=board[i-1]+board[i-2];
+        }
+        return board[n];//board[n] means n step
+    }
+}
 
 public class Solution {
     public int climbStairs(int n) {

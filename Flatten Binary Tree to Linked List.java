@@ -1,5 +1,37 @@
 public class Solution {
     public void flatten(TreeNode root) {
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        if(root==null)
+            return;
+       f(root);
+    }
+    public TreeNode f(TreeNode root){
+        TreeNode left=root.left;
+        TreeNode right=root.right;
+        TreeNode end=root;;
+        root.left=null;
+        if(left!=null){
+            root.right=left;
+            end=f(left);
+        }
+        
+        if(right!=null){
+            end.right=right;
+            end=f(right);
+        }
+        
+        return end;
+    }
+}
+
+
+
+
+
+
+
+public class Solution {
+    public void flatten(TreeNode root) {
         // Start typing your Java solution below
         // DO NOT write main() function
         flatten1(root);
@@ -61,10 +93,6 @@ public class Solution {
 	return end;
 
 }
-
-
-
-
 
 
 

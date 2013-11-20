@@ -14,8 +14,8 @@ public class Solution {
             return mid;
         if(mid>x/mid)
             l=mid;
-            else 
-                s=mid;
+        else 
+            s=mid;
     }
     
     return s;//very important, not return mid
@@ -30,7 +30,7 @@ public class Solution {
         if(x==0)
             return 0;
 	if(x==1)
-		return 1;
+		return 1;//easy to forget
         return help(x,0, x);
     }
     
@@ -42,7 +42,7 @@ public class Solution {
             return mid;
         if(mid>x/mid)
             {
-                return help(x,low,mid);
+                return help(x,low,mid);//no need to mid-1, 
             }
         else{
             return help(x,mid,high);

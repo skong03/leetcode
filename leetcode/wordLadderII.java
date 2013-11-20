@@ -161,7 +161,7 @@ public class Solution {
         
         LinkedList<Node> que = new LinkedList<Node>();
         // HashSet<String> visited = new HashSet<String>();
-		HashMap<String, Integer> visited = new HashMap<String, Integer>();
+	HashMap<String, Integer> visited = new HashMap<String, Integer>();
         int prelevel = 0;
         
         que.add(new Node(null, 1, start));

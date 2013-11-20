@@ -54,7 +54,7 @@ public class Solution {
             }
         }
         
-        if(count<T.length())
+        if(count<T.length())//watch out here
             return "";
         else
             return res;

@@ -33,16 +33,40 @@ public class Solution{
 			StringBuffer next=new StringBuffer();
 			for(int j=0;j<cur.length();j++){
 				int cnt=1;
-				char val=s.charAt(j);
+				char val=cur.charAt(j);
 				while(j+1<cur.length()&&cur.charAt(j+1)==cur.charAt(j)){
 					cnt++;
 					j++;
 				}
-				next.append(cur.charAt(j));
 				next.append(cnt);
+				next.append(cur.charAt(j));
 			}
 			cur=next.toString();
 		}
 		return cur;
 	}
+}
+
+
+public class Solution {
+    public String countAndSay(int n) {
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        String cur="1";
+        
+        int count=1;
+        for(int i=0;i<n-1;i++){
+        	StringBuffer next=new StringBuffer();//need to clear the buffer
+            for(int j=0;j<cur.length();j++){
+                if(j+1>=cur.length()||cur.charAt(j)!=cur.charAt(j+1)){
+                    next.append(count);
+                    next.append(cur.charAt(j));
+                    count=1;
+                }else
+                    count++;
+            }
+            cur=next.toString();
+            
+        }
+        return cur;
+    }
 }

@@ -19,7 +19,7 @@ public class Solution {
             return;
         }
             
-        for(int i=pos;i<n.length;i++)
+        for(int i=pos;i<n.length;i++)//you make mistake here, forget i
         {
             temp.add(n[i]);
             dfs(res,temp,target-n[i],n,i);

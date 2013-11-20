@@ -1,32 +1,27 @@
 public class Solution {
     public int trap(int[] A) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
-        int i=0;
-        int j=A.length-1;
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        int maxleft=0;
+        int maxright=0;
         int left=0;
-        int right=0;
+        int right=A.length-1;
         int sum=0;
-        while(i<j)
-        {
-            left=Math.max(left,A[i]);
-            right=Math.max(right,A[j]);
-
-            if(left<=right)
-            {
-                if(A[i]<left)
-                    sum=sum+left-A[i];
-                
-                i++;
-            }
-            else
-            {
-                if(A[j]<right)
-                    sum=sum+right-A[j];
-                j--;
+        while(left<=right){
+            maxleft=Math.max(A[left],maxleft);//first get the maxvalue of left and right
+            maxright=Math.max(A[right],maxright);
+            
+            if(maxleft<maxright){//if maxleft<maxright, move the point left
+                if(A[left]<maxleft){
+                    sum+=maxleft-A[left];
+                }
+                left++;
+            }else {
+                if(A[right]<maxright)
+                    sum+=maxright-A[right];
+                right--;
             }
         }
-        
         return sum;
+        
     }
 }

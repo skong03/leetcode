@@ -24,7 +24,7 @@ public class Solution {
         
         for(ArrayList<String> a: amap.values())
         {
-            if(a.size()>1)
+            if(a.size()>1)//forget, just add the String which is dupilcate
                 res.addAll(a);
         }
         

@@ -35,3 +35,31 @@ public class Solution {
         return res.next;
     }
 }
+
+
+public class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        ListNode res=new ListNode(-1);
+        res.next=head;
+        ListNode slow=res;
+        ListNode fast=head;
+        
+        while(fast!=null&&fast.next!=null){
+            boolean f=false;
+            while(fast!=null&&fast.next!=null&&fast.val==fast.next.val){
+                fast=fast.next;
+                f=true;
+            }
+            if(f){
+                    slow.next=fast.next;
+                    fast=slow.next;
+                }
+            else{
+                    slow=slow.next;
+                    fast=fast.next;
+                }
+        }
+        return res.next;
+    }
+}

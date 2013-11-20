@@ -4,7 +4,7 @@ public class Solution {
         // DO NOT write main() function
         int[][] matrix=new int[n][n];
         int start=0;
-        int end=n-1;
+        int end=n-1;//very important, make mistake here
         int num=1;
         
         while(start<end)

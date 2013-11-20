@@ -65,3 +65,42 @@ public class Solution {
         return newhead;
     }
 }
+
+
+public class Solution {
+    public ListNode rotateRight(ListNode head, int n) {
+        // Note: The Solution object is instantiated only once and is reused by each test case.
+        if(n==0||head==null)
+            return head;
+        ListNode fast=head;
+        ListNode slow=head;
+        ListNode res=new ListNode(0);
+        res.next=head;
+        
+        int count=0;
+        for(int i=0;i<n;i++){
+            if(fast==null){
+                break;        
+            }else{
+                count++;
+                fast=fast.next;
+            }
+        }
+        
+        if(fast==null)
+            return rotateRight(head,n%count);
+        
+        while(fast.next!=null){
+            fast=fast.next;
+            slow=slow.next;
+        }
+        
+        ListNode b=slow.next;
+        
+        res.next=b;
+        slow.next=null;
+        fast.next=head;
+        
+        return res.next;
+    }
+}

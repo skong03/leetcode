@@ -1,4 +1,25 @@
 public class Solution {
+    public ArrayList<Integer> grayCode(int n) {
+        // IMPORTANT: Please reset any member data you declared, as
+        // the same Solution instance will be reused for each test case.
+        ArrayList<Integer> res=new ArrayList<Integer>();
+        res.add(0);
+        if(n==0)
+            return res;
+        res.add(1);
+        for(int i=1;i<n;i++){
+            int index=res.size()-1;
+            int high=1<<i;
+            for(int j=index;j>=0;j--){
+                res.add(res.get(j)+high);
+            }
+        }
+        return res;
+    }
+}
+
+
+public class Solution {
     public ArrayList<Integer> grayCode(int n) {  
         ArrayList<Integer> resultList = new ArrayList<Integer>();
         if (n <= 1) {
